@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import './Counter.scss'
+import styles from './Counter.module.scss';
 
 export const Counter = () => {
 	const [counter, setCounter] = useState(0);
@@ -15,8 +15,12 @@ export const Counter = () => {
 	return (
 		<div>
 			<pre>Counter {counter}</pre>
-			<button onClick={decrement}>-</button>
-			<button onClick={increment}>+</button>
+			<button onClick={decrement} className={styles.button}>
+				-
+			</button>
+			<button onClick={increment} className={styles.button}>
+				+
+			</button>
 		</div>
 	);
 };

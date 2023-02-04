@@ -1,3 +1,4 @@
+import dotenv from 'dotenv';
 import path from 'path';
 import { Configuration } from 'webpack';
 import { buildWebpackConfig } from './config/build/buildWebpackConfig';
@@ -12,13 +13,21 @@ export default (env: BuildEnv) => {
 
 	const mode = env.mode || 'development';
 	const isDev = mode === 'development';
-	const PORT = env.port || 3000;
+
+	dotenv.config({
+		path: path.resolve(
+			__dirname,
+			'config',
+			'env',
+			`.env.${isDev ? 'development' : 'production'}`
+		)
+	});
 
 	const config: Configuration = buildWebpackConfig({
 		mode,
 		paths: paths,
 		isDev,
-		port: PORT
+		port: process.env.PORT
 	});
 
 	return config;

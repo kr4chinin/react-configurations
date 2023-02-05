@@ -1,0 +1,17 @@
+@import 'reset';
+@import './variables/global';
+@import './themes/light';
+@import './themes/dark';
+
+.app {
+	width: 100%;
+	min-height: 100vh;
+
+	display: flex;
+	justify-content: center;
+
+	font: var(--font-m);
+
+	background-color: var(--bg-color);
+	color: var(--primary-color);
+}

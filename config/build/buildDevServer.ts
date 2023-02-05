@@ -8,6 +8,7 @@ export function buildDevServer(options: BuildOptions): DevServerConfiguration {
 			app: {
 				name: 'Google Chrome'
 			}
-		}
+		},
+		historyApiFallback: true
 	};
 }

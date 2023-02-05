@@ -5,13 +5,13 @@ export const classNames = (
 	mods: Mods,
 	additional: string[] = []
 ) => {
-	const modsClasslist: string[] = [];
-
-	Object.keys(mods).forEach((cls) => {
-		if (mods[cls]) {
-			modsClasslist.push(cls);
-		}
-	});
-
-	return [cls, ...modsClasslist, ...additional].join(' ');
+	return [
+		cls,
+		...Object.entries(mods).reduce(
+			(modsClasslist, [cls, value]) =>
+				value ? [...modsClasslist, cls] : modsClasslist,
+			[]
+		),
+		...additional
+	].join(' ');
 };

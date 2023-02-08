@@ -1,4 +1,4 @@
-import { FC, ReactNode } from 'react';
+import { FC } from 'react';
 import { Link, LinkProps } from 'react-router-dom';
 import { classNames } from 'shared/lib';
 import styles from './AppLink.module.scss';
@@ -23,11 +23,11 @@ export const AppLink: FC<AppLinkProps> = (props: AppLinkProps) => {
 
 	return (
 		<Link
+			{...rest}
 			className={classNames(styles.AppLink, {}, [
 				className,
 				styles[theme]
 			])}
-			{...rest}
 		>
 			{children}
 		</Link>

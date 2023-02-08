@@ -2,7 +2,7 @@ type Mods = Record<string, boolean>;
 
 export const classNames = (
 	cls: string,
-	mods: Mods,
+	mods: Mods = {},
 	additional: string[] = []
 ) => {
 	return [
@@ -12,6 +12,6 @@ export const classNames = (
 				value ? [...modsClasslist, cls] : modsClasslist,
 			[]
 		),
-		...additional
+		...additional.filter(Boolean)
 	].join(' ');
 };

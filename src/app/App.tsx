@@ -5,16 +5,11 @@ import { AppRouter } from './providers/router';
 import './styles/index.scss';
 
 export const App = () => {
-	const { theme, toggleTheme } = useTheme();
+	const { theme } = useTheme();
 
 	return (
-		<div className={classNames('app', {}, [theme])}>
-			<Navbar /> 
-
-			<div>
-				<button onClick={toggleTheme}>Toggle theme</button>
-			</div>
-
+		<div className={classNames('App', {}, [theme])}>
+			<Navbar />
 			<AppRouter />
 		</div>
 	);

@@ -1,4 +1,4 @@
-import { AppRoutes } from 'shared/config/routeConfig/routeConfig';
+import { AppRoutes, RoutePath } from 'shared/config/routeConfig/routeConfig';
 import { classNames } from 'shared/lib';
 import { AppLink, AppLinkTheme } from 'shared/ui/AppLink/AppLink';
 import { ThemeSwitcher } from 'widgets/ThemeSwitcher';
@@ -11,13 +11,19 @@ interface NavbarProps {
 export const Navbar = ({ className }: NavbarProps) => {
 	return (
 		<div className={classNames(styles.Navbar, {}, [className])}>
-      <ThemeSwitcher />
-      
+			<ThemeSwitcher />
+
 			<div className={styles.links}>
-				<AppLink theme={AppLinkTheme.SECONDARY} to={AppRoutes.MAIN}>
+				<AppLink
+					theme={AppLinkTheme.SECONDARY}
+					to={RoutePath[AppRoutes.MAIN]}
+				>
 					Main page
 				</AppLink>
-				<AppLink theme={AppLinkTheme.SECONDARY} to={AppRoutes.ABOUT}>
+				<AppLink
+					theme={AppLinkTheme.SECONDARY}
+					to={RoutePath[AppRoutes.ABOUT]}
+				>
 					About page
 				</AppLink>
 			</div>

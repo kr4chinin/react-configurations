@@ -1,7 +1,6 @@
 import { AppRoutes, RoutePath } from 'shared/config/routeConfig/routeConfig';
 import { classNames } from 'shared/lib';
 import { AppLink, AppLinkTheme } from 'shared/ui/AppLink/AppLink';
-import { ThemeSwitcher } from 'widgets/ThemeSwitcher';
 import styles from './Navbar.module.scss';
 
 interface NavbarProps {
@@ -11,8 +10,6 @@ interface NavbarProps {
 export const Navbar = ({ className }: NavbarProps) => {
 	return (
 		<div className={classNames(styles.Navbar, {}, [className])}>
-			<ThemeSwitcher />
-
 			<div className={styles.links}>
 				<AppLink
 					theme={AppLinkTheme.SECONDARY}

@@ -14,7 +14,7 @@
 
 	background-color: var(--bg-color);
 	color: var(--primary-color);
-	transition: var(--transition);
+	transition-property: background-color var(--transition);
 }
 
 .Content {

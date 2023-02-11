@@ -8,10 +8,20 @@
 	min-height: 100vh;
 
 	display: flex;
-  flex-direction: column;
+	flex-direction: column;
 
 	font: var(--font-m);
 
 	background-color: var(--bg-color);
 	color: var(--primary-color);
+	transition: var(--transition);
+}
+
+.Content {
+	display: flex;
+}
+
+.Page {
+	flex: 1;
+	padding: 16px;
 }

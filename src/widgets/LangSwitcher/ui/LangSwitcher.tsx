@@ -16,9 +16,7 @@ export const LangSwitcher = (props: LangSwitcherProps) => {
 	return (
 		<Button
 			className={classNames(styles.LangSwitcher, {}, [className])}
-			onClick={() =>
-				i18n.changeLanguage(i18n.language === 'en' ? 'ru' : 'en')
-			}
+			onClick={() => i18n.changeLanguage(i18n.language === 'en' ? 'ru' : 'en')}
 		>
 			{t('Language')}
 		</Button>

@@ -17,16 +17,14 @@ export const Sidebar = (props: SidebarProps) => {
 	const [collapsed, setCollapsed] = useState(false);
 
 	const onToggle = () => {
-		setCollapsed((prev) => !prev);
+		setCollapsed(prev => !prev);
 	};
 
 	return (
 		<div
-			className={classNames(
-				styles.Sidebar,
-				{ [styles.collapsed]: collapsed },
-				[className]
-			)}
+			className={classNames(styles.Sidebar, { [styles.collapsed]: collapsed }, [
+				className,
+			])}
 		>
 			<Button onClick={onToggle} className={styles['toggle-btn']}>
 				{collapsed ? t('Expand') : t('Collapse')}

@@ -10,8 +10,8 @@ export function buildLoaders({ isDev }: BuildOptions): RuleSetRule[] {
 			loader: 'babel-loader',
 			options: {
 				presets: ['@babel/preset-env'],
-			}
-		}
+			},
+		},
 	};
 
 	const cssLoader = {
@@ -26,32 +26,32 @@ export function buildLoaders({ isDev }: BuildOptions): RuleSetRule[] {
 							resourcePath.endsWith('.module.scss'),
 						localIdentName: isDev
 							? '[path][name]__[local]--[hash:base64:5]'
-							: '[hash:base64:8]'
-					}
-				}
+							: '[hash:base64:8]',
+					},
+				},
 			},
-			'sass-loader'
-		]
+			'sass-loader',
+		],
 	};
 
 	const typescriptLoader: RuleSetRule = {
 		test: /\.tsx?$/,
 		use: 'ts-loader',
-		exclude: /node_modules/
+		exclude: /node_modules/,
 	};
 
 	const fileLoader = {
 		test: /\.(png|jpe?g|gif)$/i,
 		use: [
 			{
-				loader: 'file-loader'
-			}
-		]
+				loader: 'file-loader',
+			},
+		],
 	};
 
 	const svgLoader = {
 		test: /\.svg$/,
-		use: ['@svgr/webpack']
+		use: ['@svgr/webpack'],
 	};
 
 	return [fileLoader, svgLoader, babelLoader, typescriptLoader, cssLoader];

@@ -1,6 +1,10 @@
 {
 	"extends": "react-app",
 	"rules": {
-		"react/button-has-type": 1
+		"react/button-has-type": 1,
+		"react/function-component-definition": [
+			1,
+			{ "namedComponents": "arrow-function" }
+		]
 	}
 }

@@ -1,12 +1,14 @@
 {
 	"name": "react-production",
 	"version": "1.0.0",
-	"description": "",
-	"main": "index.js",
+	"description": "React app ready for production",
+	"main": "index.tsx",
 	"scripts": {
 		"start": "webpack serve --env mode=development",
 		"build:dev": "webpack --env mode=development",
-		"build:prod": "webpack --env mode=production"
+		"build:prod": "webpack --env mode=production",
+		"lint:ts": "npx eslint \"**/*.{ts,tsx}\"",
+		"lint:ts:fix": "npx eslint \"**/*.{ts,tsx}\" --fix"
 	},
 	"keywords": [],
 	"author": "",

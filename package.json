@@ -29,6 +29,7 @@
 		"css-loader": "^6.6.0",
 		"eslint": "^8.34.0",
 		"eslint-config-react-app": "^7.0.1",
+		"eslint-plugin-i18next": "^5.1.2",
 		"file-loader": "^6.2.0",
 		"html-webpack-plugin": "^5.5.0",
 		"mini-css-extract-plugin": "^2.5.3",

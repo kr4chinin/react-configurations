@@ -1,10 +1,17 @@
 {
-	"extends": "react-app",
+	"extends": ["react-app", "plugin:i18next/recommended"],
+	"plugins": ["i18next"],
 	"rules": {
 		"react/button-has-type": 1,
 		"react/function-component-definition": [
 			1,
 			{ "namedComponents": "arrow-function" }
+		],
+		"i18next/no-literal-string": [
+			"error",
+			{
+				"markupOnly": true
+			}
 		]
 	}
 }

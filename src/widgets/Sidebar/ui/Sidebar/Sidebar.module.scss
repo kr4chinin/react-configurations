@@ -1,10 +1,13 @@
 .Sidebar {
-  height: calc(100vh - var(--navbar-height));
-  width: var(--sidebar-width);
   display: flex;
   flex-direction: column;
+
+  width: var(--sidebar-width);
+  height: calc(100vh - var(--navbar-height));
   padding: 16px;
+
   background-color: var(--inverted-bg-color);
+
   transition: var(--transition);
 
   &.collapsed {

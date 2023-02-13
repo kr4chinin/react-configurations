@@ -4,13 +4,17 @@
 @import "./themes/dark";
 
 .App {
-  width: 100%;
-  min-height: 100vh;
   display: flex;
   flex-direction: column;
+
+  width: 100%;
+  min-height: 100vh;
+
   font: var(--font-m);
-  background-color: var(--bg-color);
   color: var(--primary-color);
+
+  background-color: var(--bg-color);
+
   transition-property: background-color var(--transition);
 }
 

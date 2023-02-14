@@ -1,27 +1,27 @@
 .Sidebar {
-  display: flex;
-  flex-direction: column;
+	display: flex;
+	flex-direction: column;
 
-  width: var(--sidebar-width);
-  height: calc(100vh - var(--navbar-height));
-  padding: 16px;
+	width: var(--sidebar-width);
+	height: calc(100vh - var(--navbar-height));
+	padding: 16px;
 
-  background-color: var(--inverted-bg-color);
+	background-color: var(--inverted-bg-color);
 
-  transition: var(--transition);
+	transition: var(--transition);
 
-  &.collapsed {
-    width: var(--sidebar-width-collapsed);
-  }
+	&.collapsed {
+		width: var(--sidebar-width-collapsed);
+	}
 }
 
 .toggle-btn {
-  margin: 0 auto;
+	margin: 0 auto;
 }
 
 .switchers {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  margin-top: auto;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	margin-top: auto;
 }

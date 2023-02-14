@@ -1,10 +1,10 @@
 .Button {
-  &:hover {
-    cursor: pointer;
-  }
+	&:hover {
+		cursor: pointer;
+	}
 }
 
 .clear {
-  all: unset;
-  color: var(--inverted-primary-color);
+	all: unset;
+	color: var(--inverted-primary-color);
 }

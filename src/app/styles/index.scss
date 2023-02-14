@@ -4,25 +4,25 @@
 @import "./themes/dark";
 
 .App {
-  display: flex;
-  flex-direction: column;
+	display: flex;
+	flex-direction: column;
 
-  width: 100%;
-  min-height: 100vh;
+	width: 100%;
+	min-height: 100vh;
 
-  font: var(--font-m);
-  color: var(--primary-color);
+	font: var(--font-m);
+	color: var(--primary-color);
 
-  background-color: var(--bg-color);
+	background-color: var(--bg-color);
 
-  transition-property: background-color var(--transition);
+	transition-property: background-color var(--transition);
 }
 
 .Content {
-  display: flex;
+	display: flex;
 }
 
 .Page {
-  flex: 1;
-  padding: 16px;
+	flex: 1;
+	padding: 16px;
 }

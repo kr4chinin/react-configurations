@@ -12,6 +12,7 @@ const config = (env: BuildEnv) => {
 		src: path.resolve(__dirname, 'src'),
 	};
 
+	const analyze = env.analyze;
 	const mode = env.mode || 'development';
 	const isDev = mode === 'development';
 
@@ -29,6 +30,7 @@ const config = (env: BuildEnv) => {
 		paths: paths,
 		isDev,
 		port: process.env.PORT,
+		analyze,
 	});
 
 	return config;

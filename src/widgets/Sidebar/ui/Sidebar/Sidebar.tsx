@@ -22,11 +22,16 @@ export const Sidebar = (props: SidebarProps) => {
 
 	return (
 		<div
+			aria-label="sidebar"
 			className={classNames(styles.Sidebar, { [styles.collapsed]: collapsed }, [
 				className,
 			])}
 		>
-			<Button onClick={onToggle} className={styles['toggle-btn']}>
+			<Button
+				aria-label="toggle"
+				onClick={onToggle}
+				className={styles['toggle-btn']}
+			>
 				{collapsed ? t('Expand') : t('Collapse')}
 			</Button>
 

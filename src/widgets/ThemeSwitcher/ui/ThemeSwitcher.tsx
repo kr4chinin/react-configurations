@@ -2,7 +2,7 @@ import { Theme, useTheme } from 'app/providers/ThemeProvider';
 import DarkIcon from 'shared/assets/icons/dark_mode.svg';
 import LightIcon from 'shared/assets/icons/light_mode.svg';
 import { classNames } from 'shared/lib';
-import { Button } from 'shared/ui/Button';
+import { Button } from 'shared/ui';
 import styles from './ThemeSwitcher.module.scss';
 
 interface ThemeSwitcherProps {

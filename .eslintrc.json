@@ -10,8 +10,15 @@
 		"i18next/no-literal-string": [
 			"error",
 			{
-				"markupOnly": true
+				"markupOnly": true,
+				"ignoreAttribute": ["aria-label"]
 			}
 		]
-	}
+	},
+	"overrides": [
+		{
+			"files": ["**/src/**/*.test.{ts,tsx}"],
+			"rules": { "i18next/no-literal-string": 0 }
+		}
+	]
 }

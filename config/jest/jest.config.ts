@@ -16,6 +16,10 @@ export const config = {
 	rootDir: '../../',
 	modulePaths: ['<rootDir>src'],
 	testMatch: ['<rootDir>src/**/*(*.)@(spec|test).[tj]s?(x)'],
+	setupFilesAfterEnv: ['<rootDir>config/jest/setupTests.ts'],
+	moduleNameMapper: {
+		'\\.scss$': 'identity-obj-proxy',
+	},
 };
 
 export default config;

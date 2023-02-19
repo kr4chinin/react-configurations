@@ -5,8 +5,6 @@ i18nForTests.use(initReactI18next).init({
 	lng: 'en',
 	fallbackLng: 'en',
 
-	debug: false,
-
 	interpolation: {
 		escapeValue: false,
 	},
@@ -14,4 +12,4 @@ i18nForTests.use(initReactI18next).init({
 	resources: { en: { translations: {} } },
 });
 
-export { i18nForTests };
+export default i18nForTests;

@@ -1,11 +1,21 @@
 .Button {
+	font: var(--font-m);
+
 	&:hover {
 		cursor: pointer;
 	}
 }
 
 .clear {
-	all: unset;
-	font: var(--font-m);
+	padding: 0;
 	color: var(--inverted-primary-color);
+	background: none;
+	border: none;
+}
+
+.outline {
+	padding: 8px 12px;
+	background-color: transparent;
+	border: 1px solid var(--primary-color);
+	border-radius: 4px;
 }

@@ -1,6 +1,7 @@
 import path from 'path';
-import { Configuration } from 'webpack';
+import { Configuration, RuleSetRule } from 'webpack';
 import { buildCssLoader } from '../build/loaders/buildCssLoader';
+import { buildSvgLoader } from '../build/loaders/buildSvgLoader';
 import { BuildPaths } from '../build/types/config';
 
 const config = ({ config }: { config: Configuration }) => {
@@ -15,6 +16,20 @@ const config = ({ config }: { config: Configuration }) => {
 	config.resolve?.extensions?.push('.ts', '.tsx');
 
 	config.module?.rules?.push(buildCssLoader(true));
+
+	if (config.module?.rules) {
+		config.module.rules = config.module.rules.map(rule => {
+			const ruleSetRule = rule as RuleSetRule;
+
+			if (/svg/.test(ruleSetRule.test as string)) {
+				return { ...ruleSetRule, exclude: /\.svg$/i };
+			}
+
+			return rule;
+		});
+	}
+
+	config.module?.rules?.push(buildSvgLoader());
 
 	return config;
 };

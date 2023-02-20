@@ -5,7 +5,7 @@ import { ThemeDecorator } from 'shared/config/storybook/ThemeDecorator/ThemeDeco
 import { Theme } from 'app/providers/ThemeProvider';
 
 export default {
-	title: 'shared/ui/Button',
+	title: 'shared/Button',
 	component: Button,
 	argTypes: {
 		backgroundColor: { control: 'color' },

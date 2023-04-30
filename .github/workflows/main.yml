@@ -17,7 +17,7 @@ jobs:
         with:
           node-version: ${{ matrix.node-version }}
       - name: Installing dependencies
-        run: npm install
+        run: npm ci
       - name: Building the app
         run: npm run build:prod
       - name: Linting typescript with ESLint

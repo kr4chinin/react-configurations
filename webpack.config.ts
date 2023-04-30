@@ -29,7 +29,7 @@ const config = (env: BuildEnv) => {
 		mode,
 		paths: paths,
 		isDev,
-		port: process.env.PORT,
+		port: process.env.PORT ?? '3000',
 		analyze,
 	});
 

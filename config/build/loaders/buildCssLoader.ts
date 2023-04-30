@@ -12,7 +12,7 @@ export const buildCssLoader = (isDev: boolean) => {
 						auto: (resourcePath: string) =>
 							resourcePath.endsWith('.module.scss'),
 						localIdentName: isDev
-							? '[path][name]__[local]--[hash:base64:5]'
+							? '[local]--[hash:base64:4]'
 							: '[hash:base64:8]',
 					},
 				},

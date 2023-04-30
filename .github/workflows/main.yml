@@ -1,4 +1,4 @@
-run-name: Linting, testing, and building 🔎
+name: Linting, testing, and building 🔎
 on:
   push:
     branches: [main]
@@ -34,7 +34,9 @@ jobs:
         uses: actions/setup-node@v2
         with:
           node-version: ${{ matrix.node-version }}
-      - name: Building storybook
+      - name: Installing dependencies
+        run: npm ci
+      - name: Starting Storybook
         run: npm run storybook:build
 
   screenshot-testing:
@@ -70,8 +72,6 @@ jobs:
         run: npm ci
       - name: Unit testing with Jest
         run: npm run test:unit
-      - name: Screenshot testing with Loki
-        run: npm run test:ui:ci
 
   build:
     runs-on: ubuntu-latest

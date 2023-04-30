@@ -1,4 +1,6 @@
 .Sidebar {
+	position: relative;
+
 	display: flex;
 	flex-direction: column;
 
@@ -16,7 +18,9 @@
 }
 
 .toggle-btn {
-	margin: 0 auto;
+	position: absolute;
+	right: -32px;
+	bottom: 32px;
 }
 
 .switchers {

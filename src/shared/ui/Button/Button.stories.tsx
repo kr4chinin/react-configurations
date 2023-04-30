@@ -32,3 +32,21 @@ OutlineDark.args = {
 	theme: ButtonTheme.OUTLINE,
 };
 OutlineDark.decorators = [ThemeDecorator(Theme.DARK)];
+
+export const Square = Template.bind({});
+Square.args = {
+	children: '+',
+	square: true,
+};
+
+export const Background = Template.bind({});
+Background.args = {
+	children: 'Button',
+	theme: ButtonTheme.BACKGROUND,
+};
+
+export const BackgroundInverted = Template.bind({});
+BackgroundInverted.args = {
+	children: 'Button',
+	theme: ButtonTheme.BACKGROUND_INVERTED,
+};

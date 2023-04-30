@@ -1,11 +1,11 @@
-run-name: Linting, testing, and building 🔎
+run-name: Building, linting, and testing 🔎
 on:
   push:
     branches: [main]
   pull_request:
     branches: [main]
 jobs:
-  pipeline:
+  build:
     runs-on: ubuntu-latest
     strategy:
       matrix:
@@ -20,13 +20,72 @@ jobs:
         run: npm ci
       - name: Building the app
         run: npm run build:prod
+
+  linting:
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        node-version: [17.x]
+    steps:
+      - uses: actions/checkout@v2
+      - name: Starting Node.js ${{ matrix.node-version }}
+        uses: actions/setup-node@v2
+        with:
+          node-version: ${{ matrix.node-version }}
+      - name: Installing dependencies
+        run: npm ci
       - name: Linting typescript with ESLint
         run: npm run lint:ts
       - name: Linting scss with Stylelint
         run: npm run lint:scss
-      - name: Unit testing with Jest
-        run: npm run test:unit
+
+  storybook:
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        node-version: [17.x]
+    needs: build
+    steps:
+      - uses: actions/checkout@v2
+      - name: Starting Node.js ${{ matrix.node-version }}
+        uses: actions/setup-node@v2
+        with:
+          node-version: ${{ matrix.node-version }}
       - name: Building storybook
         run: npm run storybook:build
+
+  screenshot-testing:
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        node-version: [17.x]
+    needs: storybook
+    steps:
+      - uses: actions/checkout@v2
+      - name: Starting Node.js ${{ matrix.node-version }}
+        uses: actions/setup-node@v2
+        with:
+          node-version: ${{ matrix.node-version }}
+      - name: Installing dependencies
+        run: npm ci
+      - name: Screenshot testing with Loki
+        run: npm run test:ui:ci
+
+  unit-testing:
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        node-version: [17.x]
+    needs: linting
+    steps:
+      - uses: actions/checkout@v2
+      - name: Starting Node.js ${{ matrix.node-version }}
+        uses: actions/setup-node@v2
+        with:
+          node-version: ${{ matrix.node-version }}
+      - name: Installing dependencies
+        run: npm ci
+      - name: Unit testing with Jest
+        run: npm run test:unit
       - name: Screenshot testing with Loki
         run: npm run test:ui:ci

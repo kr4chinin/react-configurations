@@ -1,5 +1,6 @@
 .Button {
 	width: fit-content;
+	padding: 8px 12px;
 	font: var(--font-m);
 
 	&:hover {
@@ -15,7 +16,6 @@
 }
 
 .outline {
-	padding: 8px 12px;
 	background-color: transparent;
 	border: 1px solid var(--primary-color);
 	border-radius: 4px;
@@ -43,17 +43,27 @@
 .square.size-m {
 	width: var(--font-line-m);
 	height: var(--font-line-m);
-	font: var(--font-m);
 }
 
 .square.size-l {
 	width: var(--font-line-l);
 	height: var(--font-line-l);
-	font: var(--font-l);
 }
 
 .square.size-xl {
 	width: var(--font-line-xl);
 	height: var(--font-line-xl);
+	font: var(--font-xl);
+}
+
+.size-m {
+	font: var(--font-m);
+}
+
+.size-l {
+	font: var(--font-l);
+}
+
+.size-xl {
 	font: var(--font-xl);
 }

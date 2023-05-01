@@ -1,8 +1,9 @@
 {
-	"Language": "English",
-	"Main": "Main",
-	"About": "About",
-	"Page not found": "Page not found",
-	"Something went wrong": "Something went wrong",
-	"Reload page": "Reload page"
+  "Language": "English",
+  "Main": "Main",
+  "About": "About",
+  "Page not found": "Page not found",
+  "Something went wrong": "Something went wrong",
+  "Reload page": "Reload page",
+  "Short language": "En"
 }

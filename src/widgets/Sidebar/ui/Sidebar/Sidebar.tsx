@@ -39,7 +39,7 @@ export const Sidebar = (props: SidebarProps) => {
 
 			<div className={styles.switchers}>
 				<ThemeSwitcher />
-				<LangSwitcher />
+				<LangSwitcher shortLang={collapsed} />
 			</div>
 		</div>
 	);

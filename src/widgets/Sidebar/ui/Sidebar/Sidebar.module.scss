@@ -7,6 +7,27 @@
 	margin-top: auto;
 }
 
+.link {
+	margin-left: 8px;
+}
+
+.items {
+	display: flex;
+	flex-direction: column;
+	gap: 8px;
+
+	.item {
+		display: flex;
+		align-items: center;
+
+		.icon {
+			width: 24px;
+			height: 24px;
+			fill: var(--inverted-primary-color);
+		}
+	}
+}
+
 .Sidebar {
 	position: relative;
 
@@ -22,10 +43,22 @@
 	transition: var(--transition);
 
 	&.collapsed {
+		align-items: center;
 		width: var(--sidebar-width-collapsed);
 
 		.switchers {
 			flex-direction: column;
+		}
+
+		.items {
+			gap: 16px;
+		}
+
+		.link {
+			width: 0;
+			margin-left: 0;
+			opacity: 0;
+			transition: var(--transition);
 		}
 	}
 }

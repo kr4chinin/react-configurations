@@ -13,6 +13,12 @@
 	justify-content: center;
 
 	opacity: 0;
+
+	&.opened {
+		pointer-events: all;
+		z-index: var(--modal-z-index);
+		opacity: 1;
+	}
 }
 
 .overlay {
@@ -21,16 +27,42 @@
 	position: absolute;
 	z-index: -1;
 	inset: 0;
+
+	opacity: 0.8;
+
+	transition: 0.3s ease;
 }
 
 .content {
+	scale: 0.8;
+
 	padding: 12px;
+
+	opacity: 0.8;
 	background-color: var(--bg-color);
 	border-radius: 12px;
+
+	transition: 0.3s ease;
 }
 
 .opened {
-	pointer-events: auto;
-	z-index: var(--modal-z-index);
-	opacity: 1;
+	.content {
+		scale: 1;
+		opacity: 1;
+	}
+
+	.overlay {
+		opacity: 1;
+	}
+}
+
+.closing {
+	.content {
+		scale: 0.7;
+		opacity: 0;
+	}
+
+	.overlay {
+		opacity: 0;
+	}
 }

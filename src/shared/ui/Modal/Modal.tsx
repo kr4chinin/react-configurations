@@ -1,4 +1,4 @@
-import { ReactNode, useRef, useState } from 'react';
+import { ReactNode, useEffect, useRef, useState } from 'react';
 import { classNames } from 'shared/lib';
 import styles from './Modal.module.scss';
 
@@ -34,6 +34,14 @@ export const Modal = (props: ModalProps) => {
 			setClosing(false);
 		}, ANIMATION_DELAY);
 	};
+
+	useEffect(() => {
+		return () => {
+			if (timeoutRef.current) {
+				clearTimeout(timeoutRef.current);
+			}
+		};
+	}, []);
 
 	return (
 		<div className={classNames(styles.Modal, mods, [className])}>

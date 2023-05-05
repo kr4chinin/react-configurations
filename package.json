@@ -21,7 +21,8 @@
 		"test:ui:html": "reg-cli --from .loki/report.json --report .loki/report.html",
 		"test:ui:report": "npm run test:ui:json && npm run test:ui:html",
 		"storybook": "start-storybook -p 6006 -c ./config/storybook --no-open",
-		"storybook:build": "build-storybook -c ./config/storybook"
+		"storybook:build": "build-storybook -c ./config/storybook",
+		"storybookn:build:test:ui:ci": "npm run storybook:build && npm run test:ui:ci"
 	},
 	"keywords": [],
 	"author": "",

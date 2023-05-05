@@ -1,9 +1,10 @@
 {
-	"Language": "Русский",
-	"Main": "Главная",
-	"About": "О сайте",
-	"Page not found": "Страницы не найдена",
-	"Something went wrong": "Что-то пошло не так",
-	"Reload page": "Обновить страницу",
-	"Short language": "Ru"
+  "Language": "Русский",
+  "Main": "Главная",
+  "About": "О сайте",
+  "Page not found": "Страницы не найдена",
+  "Something went wrong": "Что-то пошло не так",
+  "Reload page": "Обновить страницу",
+  "Short language": "Ru",
+  "Sign in": "Войти"
 }

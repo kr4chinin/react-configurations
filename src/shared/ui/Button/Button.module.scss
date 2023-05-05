@@ -2,6 +2,7 @@
 	width: fit-content;
 	padding: 8px 12px;
 	font: var(--font-m);
+	transition: var(--transition);
 
 	&:hover {
 		cursor: pointer;

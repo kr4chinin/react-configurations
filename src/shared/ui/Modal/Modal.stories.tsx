@@ -14,6 +14,6 @@ const Template: ComponentStory<typeof Modal> = args => <Modal {...args} />;
 
 export const Primary = Template.bind({});
 Primary.args = {
-	children: '',
+	children: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
 	opened: true,
 };

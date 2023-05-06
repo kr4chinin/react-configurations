@@ -56,6 +56,12 @@ jobs:
         run: npm run storybook:build
       - name: Screenshot testing with Loki
         run: npm run test:ui:ci
+      # Get artifacts from the screenshot testing
+      - name: Upload artifacts
+        uses: actions/upload-artifact@v2
+        with:
+          name: difference
+          path: difference
 
   build:
     runs-on: ubuntu-latest

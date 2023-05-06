@@ -73,3 +73,9 @@ jobs:
         run: npm ci
       - name: Building the app
         run: npm run build:prod
+      - name: Upload fail screenshots
+        if: ${{ failure() && steps.screenshots.conclusion == 'failure'}}
+        uses: actions/upload-artifact@v3
+        with:
+          path: '.loki/difference'
+          name: loki-fail-difference

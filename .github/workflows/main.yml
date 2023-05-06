@@ -56,6 +56,12 @@ jobs:
         run: npm run storybook:build
       - name: Screenshot testing with Loki
         run: npm run test:ui:ci
+      - name: Upload fail screenshots
+        if: ${{ failure() }}
+        uses: actions/upload-artifact@v3
+        with:
+          path: '.loki/difference'
+          name: loki-fail-difference
 
   build:
     runs-on: ubuntu-latest
@@ -73,8 +79,3 @@ jobs:
         run: npm ci
       - name: Building the app
         run: npm run build:prod
-      - name: Upload fail screenshots
-        uses: actions/upload-artifact@v3
-        with:
-          path: '.loki/difference'
-          name: loki-fail-difference

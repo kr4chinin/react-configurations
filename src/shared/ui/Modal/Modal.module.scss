@@ -1,3 +1,25 @@
+@keyframes content-opening {
+	0% {
+		scale: 0;
+		opacity: 0.5;
+	}
+
+	100% {
+		scale: 1;
+		opacity: 1;
+	}
+}
+
+@keyframes overlay-opening {
+	0% {
+		opacity: 0;
+	}
+
+	100% {
+		opacity: 1;
+	}
+}
+
 .Modal {
 	pointer-events: none;
 
@@ -24,42 +46,27 @@
 	z-index: -1;
 	inset: 0;
 
-	opacity: 0.8;
 	background-color: rgb(0 0 0 / 40%);
 
-	transition: 0.3s ease;
+	animation: overlay-opening 0.1s ease-out;
 }
 
 .content {
-	scale: 0.8;
-
 	padding: 12px;
-
-	opacity: 0.8;
 	background-color: var(--bg-color);
 	border-radius: 12px;
-
-	transition: 0.3s ease;
-}
-
-.opened {
-	.content {
-		scale: 1;
-		opacity: 1;
-	}
-
-	.overlay {
-		opacity: 1;
-	}
+	animation: content-opening 0.3s ease-out;
 }
 
 .closing {
 	.content {
-		scale: 0.7;
+		scale: 0.5;
 		opacity: 0;
+		transition: 0.2s ease-in;
 	}
 
 	.overlay {
 		opacity: 0;
+		transition: 0.2s ease-in;
 	}
 }

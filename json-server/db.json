@@ -1,0 +1,7 @@
+{
+	"posts": [
+		{ "id": 1, "title": "json-server-1", "author": "Ilya Kruchinin" },
+		{ "id": 2, "title": "json-server-2", "author": "Ilya Kruchinin" },
+		{ "id": 3, "title": "json-server-3", "author": "Ilya Kruchinin" }
+	]
+}

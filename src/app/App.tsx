@@ -7,7 +7,7 @@ import { AppRouter } from './providers/router';
 export const App = () => {
 	return (
 		<div className={classNames('App')}>
-			<Suspense fallback="">
+			<Suspense fallback={<span />}>
 				<Navbar />
 				<div className="Content">
 					<Sidebar />

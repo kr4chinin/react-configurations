@@ -5,15 +5,15 @@
 	"stylelint.validate": ["scss"],
 	"jestrunner.configPath": "/config/jest/jest.config.ts",
 	"cSpell.words": [
-    "adipiscing",
-    "amet",
-    "blinkmacsystemfont",
-    "Ilya",
-    "Kruchinin",
-    "languagedetector",
-    "pmmmwh",
-    "reduxjs",
-    "svgr",
-    "сaйте"
-  ]
+		"adipiscing",
+		"amet",
+		"blinkmacsystemfont",
+		"Ilya",
+		"Kruchinin",
+		"languagedetector",
+		"pmmmwh",
+		"reduxjs",
+		"svgr",
+		"сaйте"
+	]
 }

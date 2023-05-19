@@ -1,10 +1,12 @@
 {
-	"language": "English",
-	"short_language": "En",
-	"main": "Main",
-	"about": "About",
-	"page_not_found": "Page not found",
-	"something_went_wrong": "Something went wrong",
-	"reload": "Reload page",
-	"sign_in": "Sign in"
+  "language": "English",
+  "short_language": "En",
+  "main": "Main",
+  "about": "About",
+  "page_not_found": "Page not found",
+  "something_went_wrong": "Something went wrong",
+  "reload": "Reload page",
+  "sign_in": "Sign in",
+  "username_placeholder": "Enter username",
+  "password_placeholder": "Enter password"
 }

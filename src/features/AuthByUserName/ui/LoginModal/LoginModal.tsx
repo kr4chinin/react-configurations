@@ -5,15 +5,17 @@ import styles from './LoginModal.module.scss';
 
 interface LoginModalProps {
 	className?: string;
+	opened: boolean;
+	onClose: () => void;
 }
 
 export const LoginModal = (props: LoginModalProps) => {
-	const { className } = props;
+	const { opened, className, onClose } = props;
 
 	return (
 		<Modal
-			opened={false}
-			onClose={() => {}}
+			opened={opened}
+			onClose={onClose}
 			className={classNames(styles.LoginModal, {}, [className])}
 		>
 			<LoginForm />

@@ -13,7 +13,7 @@ export const NotFoundPage = (props: NotFoundPageProps) => {
 
 	return (
 		<div className={classNames(styles.NotFoundPage, {}, [className])}>
-			{t('Page not found')}
+			{t('page_not_found')}
 		</div>
 	);
 };

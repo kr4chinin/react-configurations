@@ -18,7 +18,7 @@ export const LangSwitcher = (props: LangSwitcherProps) => {
 
 	return (
 		<Button className={classNames('', {}, [className])} onClick={toggle}>
-			{shortLang ? t('Short language') : t('Language')}
+			{shortLang ? t('short_language') : t('language')}
 		</Button>
 	);
 };

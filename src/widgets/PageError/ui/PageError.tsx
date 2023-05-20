@@ -18,9 +18,9 @@ export const PageError = (props: PageErrorProps) => {
 
 	return (
 		<div className={classNames(styles.PageError, {}, [className])}>
-			<h1 className={styles.title}>{t('Something went wrong')}</h1>
+			<h1 className={styles.title}>{t('something_went_wrong')}</h1>
 
-			<Button onClick={reloadPage}>{t('Reload page')}</Button>
+			<Button onClick={reloadPage}>{t('reload')}</Button>
 		</div>
 	);
 };

@@ -44,7 +44,7 @@ export const Modal = (props: ModalProps) => {
 		};
 	}, []);
 
-	return (
+	return opened ? (
 		<Portal>
 			<div className={classNames(styles.Modal, mods, [className])}>
 				<div className={styles.content}>{children}</div>
@@ -55,5 +55,5 @@ export const Modal = (props: ModalProps) => {
 				/>
 			</div>
 		</Portal>
-	);
+	) : null;
 };

@@ -1,6 +1,8 @@
 $border: 1px solid;
 
 .Button {
+	transform: translateX(0);
+
 	width: fit-content;
 	padding: 0.5em 1em;
 
@@ -15,6 +17,10 @@ $border: 1px solid;
 
 	&:focus {
 		outline: var(--outline);
+	}
+
+	&:active {
+		transform: translateY(2px);
 	}
 }
 

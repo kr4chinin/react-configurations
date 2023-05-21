@@ -1,16 +1,13 @@
 import { ComponentMeta, ComponentStory } from '@storybook/react';
-import 'app/styles/index.scss';
-import { Sidebar } from './Sidebar';
+import { Sidebar as SidebarReference } from './Sidebar';
 
 export default {
 	title: 'widget/Sidebar',
-	component: Sidebar,
-	argTypes: {
-		backgroundColor: { control: 'color' },
-	},
-} as ComponentMeta<typeof Sidebar>;
+	component: SidebarReference,
+} as ComponentMeta<typeof SidebarReference>;
 
-const Template: ComponentStory<typeof Sidebar> = args => <Sidebar {...args} />;
+const Template: ComponentStory<typeof SidebarReference> = args => (
+	<SidebarReference {...args} />
+);
 
-export const Light = Template.bind({});
-Light.args = {};
+export const Sidebar = Template.bind({});

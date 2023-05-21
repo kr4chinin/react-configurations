@@ -4,9 +4,6 @@ import AboutPageReference from './AboutPage';
 export default {
 	title: 'pages/AboutPage',
 	component: AboutPageReference,
-	argTypes: {
-		backgroundColor: { control: 'color' },
-	},
 } as ComponentMeta<typeof AboutPageReference>;
 
 const Template: ComponentStory<typeof AboutPageReference> = () => (

@@ -1,16 +1,14 @@
 import { ComponentMeta, ComponentStory } from '@storybook/react';
 import 'app/styles/index.scss';
-import { Loader } from './Loader';
+import { Loader as LoaderReference } from './Loader';
 
 export default {
 	title: 'shared/Loader',
-	component: Loader,
-	argTypes: {
-		backgroundColor: { control: 'color' },
-	},
-} as ComponentMeta<typeof Loader>;
+	component: LoaderReference,
+} as ComponentMeta<typeof LoaderReference>;
 
-const Template: ComponentStory<typeof Loader> = args => <Loader {...args} />;
+const Template: ComponentStory<typeof LoaderReference> = args => (
+	<LoaderReference {...args} />
+);
 
-export const Light = Template.bind({});
-Light.args = {};
+export const Loader = Template.bind({});

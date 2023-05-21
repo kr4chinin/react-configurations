@@ -2,18 +2,8 @@ import { ButtonHTMLAttributes, FC } from 'react';
 import { classNames } from 'shared/lib';
 import styles from './Button.module.scss';
 
-export enum ButtonTheme {
-	CLEAR = 'clear',
-	OUTLINE = 'outline',
-	BACKGROUND = 'background',
-	BACKGROUND_INVERTED = 'background-inverted',
-}
-
-export enum ButtonSize {
-	M = 'size-m',
-	L = 'size-l',
-	XL = 'size-xl',
-}
+export type ButtonTheme = 'clear' | 'outline' | 'background';
+export type ButtonSize = 'size-m' | 'size-l' | 'size-xl';
 
 interface ButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
 	className?: string;
@@ -26,9 +16,9 @@ export const Button: FC<ButtonProps> = props => {
 	const {
 		children,
 		className,
-		theme = ButtonTheme.CLEAR,
+		theme = 'clear',
 		square = false,
-		size = ButtonSize.M,
+		size = 'size-m',
 		...rest
 	} = props;
 

@@ -1,13 +1,9 @@
 import { ComponentMeta, ComponentStory } from '@storybook/react';
-import 'app/styles/index.scss';
-import { Button, ButtonTheme } from './Button';
+import { Button } from './Button';
 
 export default {
 	title: 'shared/Button',
 	component: Button,
-	argTypes: {
-		backgroundColor: { control: 'color' },
-	},
 } as ComponentMeta<typeof Button>;
 
 const Template: ComponentStory<typeof Button> = args => <Button {...args} />;
@@ -15,13 +11,13 @@ const Template: ComponentStory<typeof Button> = args => <Button {...args} />;
 export const Clear = Template.bind({});
 Clear.args = {
 	children: 'Button',
-	theme: ButtonTheme.CLEAR,
+	theme: 'clear',
 };
 
 export const Outline = Template.bind({});
 Outline.args = {
 	children: 'Button',
-	theme: ButtonTheme.OUTLINE,
+	theme: 'outline',
 };
 
 export const Square = Template.bind({});
@@ -33,11 +29,5 @@ Square.args = {
 export const Background = Template.bind({});
 Background.args = {
 	children: 'Button',
-	theme: ButtonTheme.BACKGROUND,
-};
-
-export const BackgroundInverted = Template.bind({});
-BackgroundInverted.args = {
-	children: 'Button',
-	theme: ButtonTheme.BACKGROUND_INVERTED,
+	theme: 'background',
 };

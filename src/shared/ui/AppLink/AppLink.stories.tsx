@@ -1,28 +1,20 @@
 import { ComponentMeta, ComponentStory } from '@storybook/react';
 import 'app/styles/index.scss';
-import { AppLink, AppLinkTheme } from './AppLink';
+import { AppLink as AppLinkReference } from './AppLink';
 
 export default {
-	title: 'shared/ApLink',
-	component: AppLink,
-	argTypes: {
-		backgroundColor: { control: 'color' },
-	},
+	title: 'shared/AppLink',
+	component: AppLinkReference,
 	args: {
 		to: '/',
 	},
-} as ComponentMeta<typeof AppLink>;
+} as ComponentMeta<typeof AppLinkReference>;
 
-const Template: ComponentStory<typeof AppLink> = args => <AppLink {...args} />;
+const Template: ComponentStory<typeof AppLinkReference> = args => (
+	<AppLinkReference {...args} />
+);
 
-export const Primary = Template.bind({});
-Primary.args = {
+export const AppLink = Template.bind({});
+AppLink.args = {
 	children: 'Link',
-	theme: AppLinkTheme.PRIMARY,
-};
-
-export const Secondary = Template.bind({});
-Secondary.args = {
-	children: 'Link',
-	theme: AppLinkTheme.SECONDARY,
 };

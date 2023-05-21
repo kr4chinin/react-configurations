@@ -1,16 +1,13 @@
 import { ComponentMeta, ComponentStory } from '@storybook/react';
-import 'app/styles/index.scss';
-import { Navbar } from './Navbar';
+import { Navbar as NavbarReference } from './Navbar';
 
 export default {
 	title: 'widget/Navbar',
-	component: Navbar,
-	argTypes: {
-		backgroundColor: { control: 'color' },
-	},
-} as ComponentMeta<typeof Navbar>;
+	component: NavbarReference,
+} as ComponentMeta<typeof NavbarReference>;
 
-const Template: ComponentStory<typeof Navbar> = args => <Navbar {...args} />;
+const Template: ComponentStory<typeof NavbarReference> = args => (
+	<NavbarReference {...args} />
+);
 
-export const Light = Template.bind({});
-Light.args = {};
+export const Navbar = Template.bind({});

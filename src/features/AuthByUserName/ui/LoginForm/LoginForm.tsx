@@ -1,7 +1,6 @@
 import { useTranslation } from 'react-i18next';
 import { classNames } from 'shared/lib';
 import { Button } from 'shared/ui';
-import { ButtonTheme } from 'shared/ui/Button/Button';
 import { Input } from 'shared/ui/Input/Input';
 import styles from './LoginForm.module.scss';
 
@@ -19,7 +18,7 @@ export const LoginForm = (props: LoginFormProps) => {
 			<Input type="text" autoFocus placeholder={t('username_placeholder')} />
 			<Input type="password" placeholder={t('password_placeholder')} />
 
-			<Button className={styles['login-btn']} theme={ButtonTheme.OUTLINE}>
+			<Button className={styles['login-btn']} theme="outline">
 				{t('sign_in')}
 			</Button>
 		</div>

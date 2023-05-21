@@ -1,8 +1,12 @@
 body.dark {
-	--bg-color: #1f2937;
-	--inverted-bg-color: #f9fafb;
-	--primary-color: #94a3b8;
-	--secondary-color: #64748b;
-	--inverted-primary-color: #4b5563;
-	--inverted-secondary-color: #1f2937;
+	--bg-color: #141517;
+	--header-color: var(--primary-color);
+	--primary-color: #1a1b1e;
+	--inverted-primary-color: #909296;
+	--font-primary-color: #dde6ed;
+	--placeholder-color: #7f7f7f;
+	--focus-outline-color: rgb(66 133 244 / 50%);
+	--border-color: #7f7f7f;
+	--border-color-hover: #a5a5a5;
+	--delimiter-color: var(--primary-color);
 }

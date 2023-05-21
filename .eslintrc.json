@@ -8,10 +8,10 @@
 			{ "namedComponents": "arrow-function" }
 		],
 		"i18next/no-literal-string": [
-			"error",
+			1,
 			{
 				"markupOnly": true,
-				"ignoreAttribute": ["aria-label"]
+				"ignoreAttribute": ["aria-label", "size", "theme"]
 			}
 		],
 		"react-hooks/rules-of-hooks": "error",

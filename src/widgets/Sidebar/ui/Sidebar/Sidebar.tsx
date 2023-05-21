@@ -1,14 +1,15 @@
 import { useState } from 'react';
+import { useTranslation } from 'react-i18next';
+import SidebarCloseIcon from 'shared/assets/icons/Sidebar/sidebar_close.svg';
+import SidebarOpenIcon from 'shared/assets/icons/Sidebar/sidebar_open.svg';
+import AboutUsIcon from 'shared/assets/icons/about_us.svg';
+import HomeIcon from 'shared/assets/icons/home.svg';
+import { AppRoutes, RoutePath } from 'shared/config/routeConfig/routeConfig';
 import { classNames } from 'shared/lib';
-import { AppLink, AppLinkTheme, Button } from 'shared/ui';
-import { ButtonSize, ButtonTheme } from 'shared/ui/Button/Button';
+import { AppLink, Button } from 'shared/ui';
 import { LangSwitcher } from 'widgets/LangSwitcher';
 import { ThemeSwitcher } from 'widgets/ThemeSwitcher';
 import styles from './Sidebar.module.scss';
-import { useTranslation } from 'react-i18next';
-import { AppRoutes, RoutePath } from 'shared/config/routeConfig/routeConfig';
-import AboutUsIcon from 'shared/assets/icons/about_us.svg';
-import HomeIcon from 'shared/assets/icons/home.svg';
 
 interface SidebarProps {
 	className?: string;
@@ -17,7 +18,7 @@ interface SidebarProps {
 export const Sidebar = (props: SidebarProps) => {
 	const { className } = props;
 
-	const { t } = useTranslation();
+	const { t } = useTranslation(['about', 'main']);
 
 	const [collapsed, setCollapsed] = useState(false);
 
@@ -35,31 +36,33 @@ export const Sidebar = (props: SidebarProps) => {
 			<Button
 				square
 				aria-label="toggle"
-				size={ButtonSize.L}
-				theme={ButtonTheme.BACKGROUND_INVERTED}
-				onClick={onToggle}
+				size="size-l"
+				theme="clear"
 				className={styles['toggle-btn']}
+				onClick={onToggle}
 			>
-				{collapsed ? '>' : '<'}
+				<div className={styles['toggle-icon-wrapper']}>
+					{collapsed ? <SidebarOpenIcon /> : <SidebarCloseIcon />}
+				</div>
 			</Button>
 
 			<div className={styles.items}>
-				<AppLink
-					className={styles.item}
-					theme={AppLinkTheme.SECONDARY}
-					to={RoutePath[AppRoutes.ABOUT]}
-				>
+				<AppLink className={styles.item} to={RoutePath[AppRoutes.ABOUT]}>
 					<AboutUsIcon className={styles.icon} />
-					<span className={styles.link}>{t('About')}</span>
+					<span className={styles.link}>
+						{t('about_us', {
+							ns: 'about',
+						})}
+					</span>
 				</AppLink>
 
-				<AppLink
-					className={styles.item}
-					theme={AppLinkTheme.SECONDARY}
-					to={RoutePath[AppRoutes.MAIN]}
-				>
+				<AppLink className={styles.item} to={RoutePath[AppRoutes.MAIN]}>
 					<HomeIcon className={styles.icon} />
-					<span className={styles.link}>{t('Main')}</span>
+					<span className={styles.link}>
+						{t('main_page', {
+							ns: 'main',
+						})}
+					</span>
 				</AppLink>
 			</div>
 

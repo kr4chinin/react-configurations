@@ -36,8 +36,14 @@ export const Input = memo((props: InputProps) => {
 	};
 
 	return (
-		<div className={classNames(styles.Input, {}, [className])}>
-			<input ref={setRef} {...rest} value={value} onChange={handleChange} />
+		<div className={classNames(styles.Input, {}, [className, styles.wrapper])}>
+			<input
+				ref={setRef}
+				className={styles.input}
+				{...rest}
+				value={value}
+				onChange={handleChange}
+			/>
 		</div>
 	);
 });

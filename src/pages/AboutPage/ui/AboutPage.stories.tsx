@@ -1,15 +1,13 @@
 import { ComponentMeta, ComponentStory } from '@storybook/react';
-import 'app/styles/index.scss';
-import AboutPage from './AboutPage';
+import AboutPageReference from './AboutPage';
 
 export default {
 	title: 'pages/AboutPage',
-	component: AboutPage,
-	argTypes: {
-		backgroundColor: { control: 'color' },
-	},
-} as ComponentMeta<typeof AboutPage>;
+	component: AboutPageReference,
+} as ComponentMeta<typeof AboutPageReference>;
 
-const Template: ComponentStory<typeof AboutPage> = () => <AboutPage />;
+const Template: ComponentStory<typeof AboutPageReference> = () => (
+	<AboutPageReference />
+);
 
-export const Light = Template.bind({});
+export const AboutPage = Template.bind({});

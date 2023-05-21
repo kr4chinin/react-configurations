@@ -1,18 +1,13 @@
 import { ComponentMeta, ComponentStory } from '@storybook/react';
-import 'app/styles/index.scss';
-import { PageError } from './PageError';
+import { PageError as PageErrorReference } from './PageError';
 
 export default {
 	title: 'widget/PageError',
-	component: PageError,
-	argTypes: {
-		backgroundColor: { control: 'color' },
-	},
-} as ComponentMeta<typeof PageError>;
+	component: PageErrorReference,
+} as ComponentMeta<typeof PageErrorReference>;
 
-const Template: ComponentStory<typeof PageError> = args => (
-	<PageError {...args} />
+const Template: ComponentStory<typeof PageErrorReference> = args => (
+	<PageErrorReference {...args} />
 );
 
-export const Light = Template.bind({});
-Light.args = {};
+export const PageError = Template.bind({});

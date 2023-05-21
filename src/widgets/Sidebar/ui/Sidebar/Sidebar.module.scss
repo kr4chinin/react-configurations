@@ -23,10 +23,12 @@
 		.icon {
 			width: 24px;
 			height: 24px;
-			fill: var(--inverted-primary-color);
+			fill: var(--font-primary-color);
 		}
 	}
 }
+
+$transition-duration: 0.2s;
 
 .Sidebar {
 	position: relative;
@@ -38,13 +40,15 @@
 	height: calc(100vh - var(--navbar-height));
 	padding: 16px;
 
-	background-color: var(--inverted-bg-color);
+	background-color: var(--bg-color);
+	border-right: 1px solid var(--delimiter-color);
 
-	transition: var(--transition);
+	transition: width $transition-duration ease-out;
 
 	&.collapsed {
 		align-items: center;
 		width: var(--sidebar-width-collapsed);
+		transition: width $transition-duration ease-in;
 
 		.switchers {
 			flex-direction: column;
@@ -67,4 +71,25 @@
 	position: absolute;
 	right: -32px;
 	bottom: 32px;
+
+	padding-right: 10px;
+
+	background-color: var(--header-color);
+	border: 1px solid var(--delimiter-color);
+	border-top-right-radius: 50%;
+	border-bottom-right-radius: 50%;
+}
+
+.toggle-icon-wrapper {
+	display: flex;
+	flex-shrink: 0;
+	align-items: center;
+	justify-content: center;
+
+	width: 24px;
+	height: 24px;
+
+	svg path {
+		fill: var(--placeholder-color);
+	}
 }

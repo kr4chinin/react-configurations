@@ -1,5 +1,5 @@
 import path from 'path';
-import { Configuration, RuleSetRule } from 'webpack';
+import { Configuration, DefinePlugin, RuleSetRule } from 'webpack';
 import { buildCssLoader } from '../build/loaders/buildCssLoader';
 import { buildSvgLoader } from '../build/loaders/buildSvgLoader';
 import { BuildPaths } from '../build/types/config';
@@ -12,12 +12,15 @@ const config = ({ config }: { config: Configuration }) => {
 		src: path.resolve(__dirname, '..', '..', 'src'),
 	};
 
-	config.resolve?.modules?.push(paths.src);
-	config.resolve?.extensions?.push('.ts', '.tsx');
+	if (config.resolve) {
+		if (config.resolve.modules) config.resolve.modules.push(paths.src);
+		if (config.resolve.extensions)
+			config.resolve.extensions.push('.ts', '.tsx');
+	}
 
-	config.module?.rules?.push(buildCssLoader(true));
+	if (config.module && config.module.rules) {
+		config.module.rules.push(buildCssLoader(true));
 
-	if (config.module?.rules) {
 		config.module.rules = config.module.rules.map(rule => {
 			const ruleSetRule = rule as RuleSetRule;
 
@@ -27,9 +30,17 @@ const config = ({ config }: { config: Configuration }) => {
 
 			return rule;
 		});
+
+		config.module.rules.push(buildSvgLoader());
 	}
 
-	config.module?.rules?.push(buildSvgLoader());
+	if (config.plugins) {
+		config.plugins.push(
+			new DefinePlugin({
+				__IS_DEV__: false,
+			}),
+		);
+	}
 
 	return config;
 };

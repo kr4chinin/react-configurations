@@ -1,9 +1,9 @@
 import {
-  ChangeEvent,
-  InputHTMLAttributes,
-  memo,
-  useLayoutEffect,
-  useState,
+	ChangeEvent,
+	InputHTMLAttributes,
+	memo,
+	useLayoutEffect,
+	useState,
 } from 'react';
 import { classNames } from 'shared/lib';
 import styles from './Input.module.scss';

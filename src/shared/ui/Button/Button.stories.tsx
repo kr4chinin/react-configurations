@@ -35,9 +35,3 @@ Background.args = {
 	children: 'Button',
 	theme: ButtonTheme.BACKGROUND,
 };
-
-export const BackgroundInverted = Template.bind({});
-BackgroundInverted.args = {
-	children: 'Button',
-	theme: ButtonTheme.BACKGROUND_INVERTED,
-};

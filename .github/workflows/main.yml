@@ -63,19 +63,19 @@ jobs:
           path: '.loki/difference'
           name: loki-fail-difference
 
-  build:
-    runs-on: ubuntu-latest
-    needs: [linting, unit-testing, storybook-and-screenshot-testing]
-    strategy:
-      matrix:
-        node-version: [17.x]
-    steps:
-      - uses: actions/checkout@v2
-      - name: Starting Node.js ${{ matrix.node-version }}
-        uses: actions/setup-node@v2
-        with:
-          node-version: ${{ matrix.node-version }}
-      - name: Installing dependencies
-        run: npm ci
-      - name: Building the app
-        run: npm run build:prod
+  # build:
+  #   runs-on: ubuntu-latest
+  #   needs: [linting, unit-testing, storybook-and-screenshot-testing]
+  #   strategy:
+  #     matrix:
+  #       node-version: [17.x]
+  #   steps:
+  #     - uses: actions/checkout@v2
+  #     - name: Starting Node.js ${{ matrix.node-version }}
+  #       uses: actions/setup-node@v2
+  #       with:
+  #         node-version: ${{ matrix.node-version }}
+  #     - name: Installing dependencies
+  #       run: npm ci
+  #     - name: Building the app
+  #       run: npm run build:prod

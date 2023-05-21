@@ -1,6 +1,5 @@
 import { ComponentMeta, ComponentStory } from '@storybook/react';
-import 'app/styles/index.scss';
-import { Button, ButtonTheme } from './Button';
+import { Button } from './Button';
 
 export default {
 	title: 'shared/Button',
@@ -15,13 +14,13 @@ const Template: ComponentStory<typeof Button> = args => <Button {...args} />;
 export const Clear = Template.bind({});
 Clear.args = {
 	children: 'Button',
-	theme: ButtonTheme.CLEAR,
+	theme: 'clear',
 };
 
 export const Outline = Template.bind({});
 Outline.args = {
 	children: 'Button',
-	theme: ButtonTheme.OUTLINE,
+	theme: 'outline',
 };
 
 export const Square = Template.bind({});
@@ -33,5 +32,5 @@ Square.args = {
 export const Background = Template.bind({});
 Background.args = {
 	children: 'Button',
-	theme: ButtonTheme.BACKGROUND,
+	theme: 'background',
 };

@@ -1,6 +1,5 @@
 import { useDispatch, useSelector } from 'react-redux';
 import { Button } from 'shared/ui';
-import { ButtonSize } from 'shared/ui/Button/Button';
 import { getCounterValue } from '../model/selectors/getCounterValue/getCounterValue';
 import { counterActions } from '../model/slice/counterSlice';
 
@@ -20,18 +19,10 @@ export const Counter = () => {
 		<div>
 			<h1 aria-label="value">{counterValue}</h1>
 
-			<Button
-				aria-label="increment button"
-				size={ButtonSize.XL}
-				onClick={increment}
-			>
+			<Button aria-label="increment button" size="size-xl" onClick={increment}>
 				+
 			</Button>
-			<Button
-				aria-label="decrement button"
-				size={ButtonSize.XL}
-				onClick={decrement}
-			>
+			<Button aria-label="decrement button" size="size-xl" onClick={decrement}>
 				-
 			</Button>
 		</div>

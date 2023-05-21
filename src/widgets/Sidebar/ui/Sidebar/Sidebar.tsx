@@ -7,7 +7,6 @@ import HomeIcon from 'shared/assets/icons/home.svg';
 import { AppRoutes, RoutePath } from 'shared/config/routeConfig/routeConfig';
 import { classNames } from 'shared/lib';
 import { AppLink, Button } from 'shared/ui';
-import { ButtonSize, ButtonTheme } from 'shared/ui/Button/Button';
 import { LangSwitcher } from 'widgets/LangSwitcher';
 import { ThemeSwitcher } from 'widgets/ThemeSwitcher';
 import styles from './Sidebar.module.scss';
@@ -37,8 +36,8 @@ export const Sidebar = (props: SidebarProps) => {
 			<Button
 				square
 				aria-label="toggle"
-				size={ButtonSize.L}
-				theme={ButtonTheme.CLEAR}
+				size="size-l"
+				theme="clear"
 				className={styles['toggle-btn']}
 				onClick={onToggle}
 			>

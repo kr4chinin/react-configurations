@@ -31,8 +31,8 @@ export const Modal = (props: ModalProps) => {
 		setClosing(true);
 
 		timeoutRef.current = setTimeout(() => {
-			onClose();
 			setClosing(false);
+			onClose();
 		}, ANIMATION_DELAY);
 	};
 

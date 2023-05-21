@@ -23,6 +23,21 @@ export const parameters = {
 	},
 };
 
+export const globalTypes = {
+	locale: {
+		name: 'Locale',
+		description: 'Internationalization locale',
+		toolbar: {
+			icon: 'globe',
+			items: [
+				{ value: 'en', title: 'English' },
+				{ value: 'ru', title: 'Russian' },
+			],
+			showName: true,
+		},
+	},
+};
+
 addDecorator(I18nDecorator);
 addDecorator(RouterDecorator);
 addDecorator(StyleDecorator);

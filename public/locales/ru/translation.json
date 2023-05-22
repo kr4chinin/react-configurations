@@ -1,12 +1,12 @@
 {
-  "short_language": "Ру",
-  "language": "Русский",
-  "about": "О нас",
-  "main": "Главная",
-  "page_not_found": "Страницы не найдена",
-  "reload": "Обновить страницу",
-  "sign_in": "Войти",
-  "something_went_wrong": "Что-то пошло не так",
-  "username_placeholder": "Введите имя пользователя",
-  "password_placeholder": "Введите пароль"
+	"short_language": "Ру",
+	"language": "Русский",
+	"about": "О нас",
+	"main": "Главная",
+	"page_not_found": "Страницы не найдена",
+	"reload": "Обновить страницу",
+	"sign_in": "Войти",
+	"something_went_wrong": "Что-то пошло не так",
+	"username_placeholder": "Введите имя пользователя",
+	"password_placeholder": "Введите пароль"
 }
